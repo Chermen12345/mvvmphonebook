@@ -12,7 +12,7 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.mvvmphonebook.db.PhoneDb
 
-@Database(entities = [PhoneEntity::class], version = 2, exportSchema = true)
+@Database(entities = [PhoneEntity::class], version = 1, exportSchema = true)
 
 abstract class PhoneDb: RoomDatabase() {
     abstract fun getDao(): PhoneDao
