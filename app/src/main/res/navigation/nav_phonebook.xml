@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_phonebook"
+    app:startDestination="@id/phoneListFragment">
+
+    <fragment
+        android:id="@+id/phoneListFragment"
+        android:name="com.example.mvvmphonebook.PhoneListFragment"
+        android:label="fragment_phone_list"
+        tools:layout="@layout/fragment_phone_list" >
+        <action
+            android:id="@+id/action_phoneListFragment_to_newPhoneFragment"
+            app:destination="@id/newPhoneFragment" />
+        <action
+            android:id="@+id/action_phoneListFragment_to_updatePhoneFragment"
+            app:destination="@id/updatePhoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPhoneFragment"
+        android:name="com.example.mvvmphonebook.NewPhoneFragment"
+        android:label="fragment_new_phone"
+        tools:layout="@layout/fragment_new_phone" >
+        <action
+            android:id="@+id/action_newPhoneFragment_to_phoneListFragment"
+            app:destination="@id/phoneListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatePhoneFragment"
+        android:name="com.example.mvvmphonebook.UpdatePhoneFragment"
+        android:label="fragment_update_phone"
+        tools:layout="@layout/fragment_update_phone" >
+        <argument app:nullable="true"
+            app:argType="com.example.mvvmphonebook.db.PhoneEntity"
+            android:name="phone"/>
+        <action
+            android:id="@+id/action_updatePhoneFragment_to_phoneListFragment"
+            app:destination="@id/phoneListFragment" />
+    </fragment>
+</navigation>
